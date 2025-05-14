@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[47,)" # Updated to be compatible with Forge 47.3.0
+
+license="MIT"
+
+[[mods]]
+modId="bopcompatibility" # Must match exactly with the ID used in the @Mod annotation
+version="1.0.0"
+displayName="Biomes O' Plenty Compatibility"
+description='''
+A mod that automatically maps Biomes O' Plenty biomes to vanilla biome types.
+Makes BoP compatible with mobs from other mods that spawn based on biome types (like Ice and Fire, Alex's Mobs, etc).
+'''
+credits="Thanks to the Biomes O' Plenty team for their amazing mod"
+authors="eskol"
+
+[[dependencies.bopcompatibility]] # Must match the modId
+    modId="forge"
+    mandatory=true
+    versionRange="[47.3.0,)" # Specific version you are using
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.bopcompatibility]] # Must match the modId
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)" # Ensures compatibility with 1.20.1
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.bopcompatibility]] # Must match the modId
+    modId="biomesoplenty"
+    mandatory=false # Not mandatory to allow the mod to load even without BoP
+    versionRange="[1.20.1-18.0.0.0,)" # Compatible version of BoP for 1.20.1
+    ordering="AFTER"
+    side="BOTH"
